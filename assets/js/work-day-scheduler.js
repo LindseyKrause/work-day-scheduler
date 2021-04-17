@@ -19,10 +19,11 @@ $(document).ready(function () {
         let textValue = $(this).siblings("textarea").val();
         console.log(time, textValue);
         var saveTask = function () {
-            localStorage.setItem("time", JSON.stringify(time));
-            localStorage.setItem("textValue", JSON.stringify(textValue));
-
+            localStorage.setItem('time', JSON.stringify(time));
+            localStorage.setItem('textValue', JSON.stringify(textValue));
+    
         }
+    saveTask();
+    
     })
-
 })
