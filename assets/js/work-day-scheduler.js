@@ -24,6 +24,12 @@ $(document).ready(function () {
     
         }
     saveTask();
-    
     })
+
+    var loadSchedule = function() {
+time = JSON.parse(localStorage.getItem("time"));
+console.log("saved Schedule");
+
+    }
+    loadSchedule();
 })
