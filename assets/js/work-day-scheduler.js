@@ -10,7 +10,6 @@ $(document).ready(function () {
     currentDate.appendChild(currentDateEl);
     textArea = document.getElementsByTagName("textarea");
     var scheduleContainer = document.querySelector("#scheduleContainer");
-    console.log(textArea);
     var row = document.querySelector(".row");
 
     //save function
@@ -20,8 +19,6 @@ $(document).ready(function () {
 
         currentSchedule[time] = textValue;
         localStorage.setItem("schedule", JSON.stringify(currentSchedule));
-        // saveTask();
-
     })
 
     // storedText function
@@ -35,7 +32,6 @@ $(document).ready(function () {
             idArray.push(time);
         }
         for (i = 0; i < idArray.length; i++) {
-            console.log(saveSchedule[idArray[i]]);
             var findButtonId = $("#" + idArray[i]);
             console.log(findButtonId);
             findButtonId.siblings("textarea").val(saveSchedule[idArray[i]]);
@@ -70,12 +66,9 @@ $(document).ready(function () {
 
     var hourFiveEl = document.querySelector("#timeText5").innerText;
     hourFiveInt = parseInt(hourFiveEl);
-
-    var hourSevenEl = document.querySelector("#timeText7").innerText;
-    hourSevenInt = parseInt(hourSevenEl);
     //---------------
 
-    hourIntArr = [{ hourNineInt }, { hourTenInt }, { hourElevenInt }, { hourTwelveInt }, { hourOneInt }, { hourTwoInt }, { hourThreeInt }, { hourFourInt }, { hourFiveInt }, { hourSevenInt }];
+    hourIntArr = [{ hourNineInt }, { hourTenInt }, { hourElevenInt }, { hourTwelveInt }, { hourOneInt }, { hourTwoInt }, { hourThreeInt }, { hourFourInt }, { hourFiveInt }];
     //------------- convert all hour int to moment obj
     var convertedHour = moment(hourIntArr.toString(), "LT")
     console.log(convertedHour);
@@ -83,9 +76,10 @@ $(document).ready(function () {
     function setColor(element, color) {
         element.style.backgroundColor = color;
     }
+    //--------------- There is a shorter way...
     // let parentDivId = $(convertedHour[i]).parent().attr("id");
     // console.log(parentDivId);
-
+    //----------------
     var compareTime = function () {
         momentTime = moment().format('h');
         let timeRow9 = document.querySelector("#timeRow9");
@@ -97,69 +91,69 @@ $(document).ready(function () {
         let timeRow3 = document.querySelector("#timeRow3");
         let timeRow4 = document.querySelector('#timeRow4');
         let timeRow5 = document.querySelector("#timeRow5");
-        let timeRow7 = document.querySelector("#timeRow7");
-
-        if (momentTime => moment(hourNineInt.toString(), "LT")) {
+        //----if statements for each time to format
+        if ((momentTime12) => moment(hourNineInt.toString())) {
+            console.log(moment(hourNineInt.toString()))
             console.log("true");
             setColor(timeRow9, 'gray');
-            setColor(timeRow10, 'red')
-            setColor(timeRow11, 'red');
-            setColor(timeRow12, 'red')
-            setColor(timeRow1, 'red')
-            setColor(timeRow2, 'red');
-            setColor(timeRow3, 'red')
-            setColor(timeRow4, 'red')
-            setColor(timeRow5, 'red');
+            setColor(timeRow10, 'green')
+            setColor(timeRow11, 'green');
+            setColor(timeRow12, 'green')
+            setColor(timeRow1, 'green')
+            setColor(timeRow2, 'green');
+            setColor(timeRow3, 'green')
+            setColor(timeRow4, 'green')
+            setColor(timeRow5, 'green');
         }
-        if (momentTime => hourTenInt) {
+        if (momentTime => moment(hourTenInt.toString())) {
             console.log("true");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'gray');
-            setColor(timeRow11, 'red')
-            setColor(timeRow12, 'red')
-            setColor(timeRow1, 'red');
-            setColor(timeRow2, 'red')
-            setColor(timeRow3, 'red')
-            setColor(timeRow4, 'red');
-            setColor(timeRow5, 'red')
+            setColor(timeRow11, 'green')
+            setColor(timeRow12, 'green')
+            setColor(timeRow1, 'green');
+            setColor(timeRow2, 'green')
+            setColor(timeRow3, 'green')
+            setColor(timeRow4, 'green');
+            setColor(timeRow5, 'green')
         }
-        if (momentTime => hourElevenInt) {
+        if (momentTime => moment(hourElevenInt.toString())) {
             console.log("true");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'red');
             setColor(timeRow11, 'gray')
-            setColor(timeRow12, 'red')
-            setColor(timeRow1, 'red');
-            setColor(timeRow2, 'red')
-            setColor(timeRow3, 'red')
-            setColor(timeRow4, 'red');
-            setColor(timeRow5, 'red')
+            setColor(timeRow12, 'green')
+            setColor(timeRow1, 'green');
+            setColor(timeRow2, 'green')
+            setColor(timeRow3, 'green')
+            setColor(timeRow4, 'green');
+            setColor(timeRow5, 'green')
         }
-        if (momentTime => hourTwelveInt) {
+        if (momentTime => moment(hourTwelveInt.toString())) {
             console.log("true");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'red');
             setColor(timeRow11, 'red')
             setColor(timeRow12, 'gray')
-            setColor(timeRow1, 'red');
-            setColor(timeRow2, 'red')
-            setColor(timeRow3, 'red')
-            setColor(timeRow4, 'red');
-            setColor(timeRow5, 'red')
+            setColor(timeRow1, 'green');
+            setColor(timeRow2, 'green')
+            setColor(timeRow3, 'green')
+            setColor(timeRow4, 'green');
+            setColor(timeRow5, 'green')
         }
-        if (momentTime => hourOneInt) {
+        if (momentTime => moment(hourOneInt.toString())) {
             console.log("true");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'red');
             setColor(timeRow11, 'red')
             setColor(timeRow12, 'red')
             setColor(timeRow1, 'gray');
-            setColor(timeRow2, 'red')
-            setColor(timeRow3, 'red')
-            setColor(timeRow4, 'red');
-            setColor(timeRow5, 'red')
+            setColor(timeRow2, 'green')
+            setColor(timeRow3, 'green')
+            setColor(timeRow4, 'green');
+            setColor(timeRow5, 'green')
         }
-        if (momentTime => hourTwoInt) {
+        if (momentTime => moment(hourTwoInt.toString())) {
             console.log("true");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'red');
@@ -167,15 +161,12 @@ $(document).ready(function () {
             setColor(timeRow12, 'red')
             setColor(timeRow1, 'red');
             setColor(timeRow2, 'gray')
-            setColor(timeRow3, 'red')
-            setColor(timeRow4, 'red');
-            setColor(timeRow5, 'red')
+            setColor(timeRow3, 'green')
+            setColor(timeRow4, 'green');
+            setColor(timeRow5, 'green')
         }
-        if (momentTime => hourThreeInt) {
+        if (momentTime => moment(hourThreeInt.toString())) {
             console.log("true");
-            let timeRow7 = document.querySelector("#timeRow7");
-            setColor(timeRow7, 'gray');
-            let timeRow9 = document.querySelector("#timeRow9");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'red');
             setColor(timeRow11, 'red')
@@ -183,10 +174,10 @@ $(document).ready(function () {
             setColor(timeRow1, 'red');
             setColor(timeRow2, 'red')
             setColor(timeRow3, 'gray')
-            setColor(timeRow4, 'red');
-            setColor(timeRow5, 'red')
+            setColor(timeRow4, 'green');
+            setColor(timeRow5, 'green')
         }
-        if (momentTime => hourFourInt) {
+        if (momentTime => moment(hourFourInt.toString())) {
             console.log("true");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'red');
@@ -196,9 +187,9 @@ $(document).ready(function () {
             setColor(timeRow2, 'red')
             setColor(timeRow3, 'red')
             setColor(timeRow4, 'gray');
-            setColor(timeRow5, 'red')
+            setColor(timeRow5, 'green')
         }
-        if (momentTime => hourFiveInt) {
+        if (momentTime => moment(hourFiveInt.toString())) {
             console.log("true");
             setColor(timeRow9, 'red')
             setColor(timeRow10, 'red');
@@ -210,18 +201,6 @@ $(document).ready(function () {
             setColor(timeRow4, 'red');
             setColor(timeRow5, 'gray')
         }
-        if (momentTime => moment(hourSevenInt.toString(), "LT")) {
-            console.log("true");
-            setColor(timeRow9, 'red')
-            setColor(timeRow10, 'red');
-            setColor(timeRow11, 'red')
-            setColor(timeRow12, 'red')
-            setColor(timeRow1, 'red');
-            setColor(timeRow2, 'red')
-            setColor(timeRow3, 'red')
-            setColor(timeRow4, 'red');
-            setColor(timeRow5, 'red')
-        }
     }
-        compareTime();
-    })
+    compareTime();
+})
