@@ -16,7 +16,7 @@ A simple web workday scheduler
 * moment.js
 
 ## Website
-
+https://lindseykrause.github.io/work-day-scheduler/
 
 ## Issues
 Subsequent versions of the app will need consolidation/re-factoring of repetitive code
